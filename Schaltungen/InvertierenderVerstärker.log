@@ -1,0 +1,21 @@
+Circuit: * Z:\home\martin\Dropbox\TU\2. Semester -2017S\Grundlagen der Elektrotechnik\Labor\Ue3\SimulationGit\Schaltungen\InvertierenderVerstärker.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu May 25 09:07:42 2017
+Total elapsed time: 0.109 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 267
+traniter = 248
+tranpoints = 125
+accept = 125
+rejected = 0
+matrix size = 13
+fillins = 8
+solver = Normal
+Matrix Compiler1: 676 bytes object code size  0.4/0.3/[0.2]
+Matrix Compiler2: off  [0.3]/0.4/0.3
+
