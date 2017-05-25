@@ -13,5 +13,88 @@ Da es sich bei dieser Schlatung um einen invertierenden Verst\"arker handel, wir
 Der Ausgang wird ebenfalls auf den invertierendne Eingang gegengekoppelt umd eine Brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung w\"urde die Differenzspannung zwischen invertierenen und nicht-invertierendne Eingang $\infty$ verst\"arken. Die Vert\"arkung wird mit den Beiden Widerst\"anden $R_1$ und $R_2$ eingestellt. Die Beiden Spannungspquellen $V_2$ und $V_3$ stellen die Symetrische Versorgungsspannung von $-15V$ bis $+15V$ dar.\\ \\
 $\frac{U_a}{U_e}=\frac{R_1}{R_2} \Rightarrow U_a=U_e*\frac{R_2}{R_1} \Rightarrow V=\frac{R_2}{R_1}$ \\ \\
 Da sich die Verst\"arkung $V$ laut Angabe zwichen $-40$ und $-60$ befinden soll wurden f\"ur die Widerst\"ande folgende Werte gew\"ahlt: \\ \\
-$R_1=82kM\Omega$ \\
+$R_1=82k\Omega$ \\
 $R_2=1,5k\Omega$ \\
+$V=\frac{82k \Omega}{1,5k\Omega}=54,7$
+
+\subsection{Str\"ome und Spannungen}
+Am Eingang des Invertierenden Verst\"arkers wurde wie in der Simulationsschaltung eine Spannungsquelle mit $100mV$ angeschlossen.
+
+\begin{figure}[H]
+  \centering
+  \begin{tabular}{c|c||c|c}
+    $U_e$ & $100mV$ & & \\ \hline
+    $U_a$ & $-5,47V$ & & \\ \hline
+    $U_{R_1}$ & $-5,47V$ & $I_{R_2}$ & $-66,68\mu A$  \\ \hline
+    $U_{R_2}$ & $100mV$ & $I_{R_1}$ & $-66,68\mu A$  \\ \hline
+    $U_{IN-}$ & $786nV$ & $I_{IN-}$ & $-12nA$  \\ \hline
+    $U_{IN+}$ & $0V$ & $I_{IN+}$ & $0A$
+  \end{tabular}
+  \caption{Spannungen und Str\"ome}
+\end{figure}
+\noindent
+Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $-5,47V$. Der nicht invertierende Eingang ist auf Masse geschaltet, da ein OPV immer Versucht die Spannung an beiden Eing\"angen gleich zu halten, befindet sich am invertierenden Eingang die sogenannte "virtuelle Masse". Daraus folgt wiederum, dass am $R_2$ die $100mV$ Eingangsspannung abfallen und am $R_1$ die $-5,47V$ Ausgangsspannung.
+\\ Da der Eingang eines OPV sehr hochohmig ist (ideal: $R_{in}=\infty$) flie\ss{}t auch kein Strom hinein,  daraus folgt wiederum dass die Str\"ome durch $R_1$ und $R_2$ gleich sein m\"ussen.
+
+\subsection{Zeitbereich}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=15cm, height=10cm, xmin=0, xmax=100e-3, xlabel={t}, ylabel={$U[V]$},y tick label style={grid=major}]
+      \addplot table[x=time, y=Ue, mark=none] {csv_files/invVer_time1.csv};
+      \addplot table[x=time, y=Ua, mark=none] {csv_files/invVer_time1.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=100Hz$}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=15cm, height=10cm, xmin=0, xmax=1e-3, xlabel={t}, ylabel={$U[V]$},y tick label style={grid=major}]
+      \addplot table[x=time, y=Ue, mark=none] {csv_files/invVer_time2.csv};
+      \addplot table[x=time, y=Ua, mark=none] {csv_files/invVer_time2.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=10kHz$}
+\end{figure}
+
+
+\subsection{Bodediagramme}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+      \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Amplitudengang}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+      \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Phasengang}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+      \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Amplitudengang}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+      \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Phasengang}
+\end{figure}
