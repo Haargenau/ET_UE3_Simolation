@@ -11,11 +11,11 @@
 \noindent
 Da es sich bei dieser Schlatung um einen invertierenden Verst\"arker handel, wird die Eingangsspannung am invertierendne Eingang des OPV geschaltet.
 Der Ausgang wird ebenfalls auf den invertierendne Eingang gegengekoppelt umd eine Brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung w\"urde die Differenzspannung zwischen invertierenen und nicht-invertierendne Eingang $\infty$ verst\"arken. Die Vert\"arkung wird mit den Beiden Widerst\"anden $R_1$ und $R_2$ eingestellt. Die Beiden Spannungspquellen $V_2$ und $V_3$ stellen die Symetrische Versorgungsspannung von $-15V$ bis $+15V$ dar.\\ \\
-$\frac{U_a}{U_e}=\frac{R_1}{R_2} \Rightarrow U_a=U_e*\frac{R_2}{R_1} \Rightarrow V=\frac{R_2}{R_1}$ \\ \\
+$\frac{U_e}{U_a}=-\frac{R_1}{R_2} \Rightarrow U_a=-U_e*\frac{R_2}{R_1} \Rightarrow V=-\frac{R_2}{R_1}$ \\ \\
 Da sich die Verst\"arkung $V$ laut Angabe zwichen $-40$ und $-60$ befinden soll wurden f\"ur die Widerst\"ande folgende Werte gew\"ahlt: \\ \\
 $R_1=82k\Omega$ \\
 $R_2=1,5k\Omega$ \\
-$V=\frac{82k \Omega}{1,5k\Omega}=54,7$
+$V=-\frac{82k \Omega}{1,5k\Omega}=-54,7$
 
 \subsection{Str\"ome und Spannungen}
 Am Eingang des Invertierenden Verst\"arkers wurde wie in der Simulationsschaltung eine Spannungsquelle mit $100mV$ angeschlossen.
@@ -47,6 +47,8 @@ Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $
   \end{tikzpicture}
   \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=100Hz$}
 \end{figure}
+\noindent
+In dieser Simulation ist ein sch\"ones Verst\"arker Verhalten zu erkennen. Das Eingansignal mit einer Amplitude von $V_{PP} = 100mV$ wird mit der zuvor Errechneten Verst\"arkung von $V=-54,7$ verst\"arkt um am Ausgang des OPVs ausgegeben.
 
 \begin{figure}[H]
   \centering
@@ -58,6 +60,8 @@ Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $
   \end{tikzpicture}
   \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=10kHz$}
 \end{figure}
+\noindent
+Ein realer OPV verh\"alt sich intern \"anlich wie ein Tiefpassfilter, je h\"oher die Frequnez desto geringer wird die D\"ampfung. Dies ist in dieser Simulation sehr gut zu erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung stark verschliffen und wird nicht mehr so gut verst\"arkt.
 
 
 \subsection{Bodediagramme}
@@ -68,7 +72,7 @@ Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $
       \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{Amplitudengang}
+  \caption{Amplitudengang, $V=-54,7$}
 \end{figure}
 \begin{figure}[H]
   \centering
@@ -77,8 +81,10 @@ Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $
       \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{Phasengang}
+  \caption{Phasengang, $V=-54,7$}
 \end{figure}
+\noindent
+Das zuvor erw\"ahnt Tiefpassverhalten spiegelt sich in diesem Bodediagramm wieder. Ab einer Grenzfrequenz von etwar $20kHz$ wird die Verst\"arkung dieser Schaltung weniger und f\"allt zun\"achst mit $-20dB/Dek$, diese steigt letztlich sogar auf $-40dB/Dek$ an.
 
 \begin{figure}[H]
   \centering
@@ -87,7 +93,7 @@ Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $
       \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{Amplitudengang}
+  \caption{Amplitudengang, , $V=-5,47$}
 \end{figure}
 \begin{figure}[H]
   \centering
@@ -96,5 +102,7 @@ Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, dies ergibt in diesem Fall $
       \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{Phasengang}
+  \caption{Phasengang, $V=-5,47$}
 \end{figure}
+\noindent
+Bei diesem Bodediagramm wurde die Verst\"arkung von $V=-54,7$ auf $V=-5,47$ verringert, dies erfolte durch eine Veringerung von $R_1$ auf $8,2k\Omega$. Durch das \"Andern der Schaltungseigenschaften verschiebt sich die Grenzfrequenz des OPVs nach hinten. Anstatt bereits bei $20kHz$ beginnt die D\"ampfung bei dieser Schaltung erst eine Dekade sp\"ater bei etwar $200kHz$. Daraus l\"asst sich folgern, dass die Verst\"arkung der OPV Schaltung mit der Grenzfrequenz direkt proportional zusammenh\"angt.
