@@ -10,8 +10,7 @@
 \end{figure}
 \noindent
 Da es sich bei dieser Schlatung um einen invertierenden Verst\"arker handelt, wird die Eingangsspannung an den invertierenden Eingang des OPV geschaltet.
-Der Ausgang wird ebenfalls auf den invertierenden Eingang gegengekoppelt, um eine brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung 
-w\"urde die Differenzspannung zwischen invertierenden und nicht-invertierenden Eingang $\infty$ verst\"arken. Die Verst\"arkung wird mit den beiden Widerst\"anden $R_1$ 
+Der Ausgang wird ebenfalls auf den invertierenden Eingang gegengekoppelt, um eine brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung w\"urde die Differenzspannung zwischen invertierenden und nicht-invertierenden Eingang $\infty$ verst\"arken. Die Verst\"arkung wird mit den beiden Widerst\"anden $R_1$ 
 und $R_2$ eingestellt. Die beiden Spannungsquellen $V_2$ und $V_3$ stellen die symmetrische Versorgungsspannung von $-15V$ bis $+15V$ dar.\\ \\
 $\frac{U_e}{U_a}=-\frac{R_1}{R_2} \Rightarrow U_a=-U_e*\frac{R_2}{R_1} \Rightarrow V=-\frac{R_2}{R_1}$ \\ \\
 Da sich die Verst\"arkung $V$ laut Angabe zwischen $-40$ und $-60$ befinden soll wurden f\"ur die Widerst\"ande folgende Werte gew\"ahlt: \\ \\
@@ -35,10 +34,10 @@ Am Eingang des invertierenden Verst\"arkers wurde wie in der Simulationsschaltun
   \caption{Spannungen und Str\"ome}
 \end{figure}
 \noindent
-Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, in diesem Fall $-5,47V$. Der nicht invertierende Eingang ist auf Masse geschaltet, da ein OPV immer Versucht die Spannung an 
-beiden Eing\"angen gleich zu halten, befindet sich am invertierenden Eingang die sogenannte "virtuelle Masse". Daraus folgt wiederum, dass an dem Widerstand $R_2$ die $100mV$ der 
-Eingangs- und an $R_1$ die $-5,47V$ der Ausgangsspannung abfallen. \\ 
-Da der Eingang eines OPV sehr hochohmig ist (ideal: $R_{in}=\infty$) flie\ss{}t auch kein Strom hinein, daraus folgt wiederum dass die Str\"ome durch $R_1$ und $R_2$ gleich 
+Die Ausgangsspannung $U_a$ ergibt sich aus $U_e*V$, in diesem Fall $-5,47V$. Der nicht invertierende Eingang ist auf Masse geschaltet, da ein OPV immer Versucht die Spannung an
+beiden Eing\"angen gleich zu halten, befindet sich am invertierenden Eingang die sogenannte "virtuelle Masse". Daraus folgt wiederum, dass an dem Widerstand $R_2$ die $100mV$ der
+Eingangs- und an $R_1$ die $-5,47V$ der Ausgangsspannung abfallen. \\
+Da der Eingang eines OPV sehr hochohmig ist (ideal: $R_{in}=\infty$) flie\ss{}t auch kein Strom hinein, daraus folgt wiederum dass die Str\"ome durch $R_1$ und $R_2$ gleich
 sein m\"ussen.
 
 \subsection{Zeitbereich}
@@ -53,7 +52,7 @@ sein m\"ussen.
   \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=100Hz$}
 \end{figure}
 \noindent
-In dieser Simulation ist ein sch\"ones Verst\"arkerverhalten zu erkennen. Das Eingangsignal, mit einer Amplitude von $V_{PP} = 100mV$, wird mit der zuvor errechneten Verst\"arkung 
+In dieser Simulation ist ein sch\"ones Verst\"arkerverhalten zu erkennen. Das Eingangsignal, mit einer Amplitude von $V_{PP} = 100mV$, wird mit der zuvor errechneten Verst\"arkung
 von $V=-54,7$ verst\"arkt und am Ausgang des OPV ausgegeben.
 
 \begin{figure}[H]
@@ -67,7 +66,7 @@ von $V=-54,7$ verst\"arkt und am Ausgang des OPV ausgegeben.
   \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=10kHz$}
 \end{figure}
 \noindent
-Ein realer OPV verh\"alt sich intern \"ahnlich wie ein Tiefpassfilter, je h\"oher die Frequnez desto geringer wird die Verst\"arkung. Dies ist in dieser Simulation sehr gut zu 
+Ein realer OPV verh\"alt sich intern \"ahnlich wie ein Tiefpassfilter, je h\"oher die Frequnez desto geringer wird die Verst\"arkung. Dies ist in dieser Simulation sehr gut zu
 erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung stark verschliffen und wird nicht mehr so gut verst\"arkt.
 
 
@@ -91,7 +90,7 @@ erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung stark ve
   \caption{Phasengang, $V=-54,7$}
 \end{figure}
 \noindent
-Das zuvor erw\"ahnt Tiefpassverhalten spiegelt sich in dem Bodediagramm wieder. Ab einer Grenzfrequenz von etwa $20kHz$ wird die Verst\"arkung dieser Schaltung weniger und 
+Das zuvor erw\"ahnt Tiefpassverhalten spiegelt sich in dem Bodediagramm wieder. Ab einer Grenzfrequenz von etwa $20kHz$ wird die Verst\"arkung dieser Schaltung weniger und
 f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ an.
 
 \begin{figure}[H]
@@ -113,6 +112,6 @@ f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ 
   \caption{Phasengang, $V=-5,47$}
 \end{figure}
 \noindent
-Bei diesem Bodediagramm wurde die Verst\"arkung von $V=-54,7$ auf $V=-5,47$ verringert, dies erfolgte durch eine Veringerung von $R_1$ auf $8,2k\Omega$. Durch das 
-\"Andern der Schaltungseigenschaften verschiebt sich die Grenzfrequenz des OPV nach hinten. Anstatt bereits bei $20kHz$ beginnt die D\"ampfung bei dieser Schaltung erst 
+Bei diesem Bodediagramm wurde die Verst\"arkung von $V=-54,7$ auf $V=-5,47$ verringert, dies erfolgte durch eine Veringerung von $R_1$ auf $8,2k\Omega$. Durch das
+\"Andern der Schaltungseigenschaften verschiebt sich die Grenzfrequenz des OPV nach hinten. Anstatt bereits bei $20kHz$ beginnt die D\"ampfung bei dieser Schaltung erst
 eine Dekade sp\"ater bei etwa $200kHz$. Daraus l\"asst sich folgern, dass die Verst\"arkung der OPV Schaltung mit der Grenzfrequenz direkt proportional zusammenh\"angt.
