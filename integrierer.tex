@@ -55,17 +55,17 @@ Dieses Ergebnis kann man, nach dem Einschwingvorgang, auch in der Simulation beo
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e3, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e3, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
       \addplot table[x=Freq, y=V(n002),col sep=comma, mark=none] {csv_files/Integrator_dB.csv};
       %\addplot table[x=Freq, y=Phi,col sep=comma, mark=none] {csv_files/Integrator_Phi.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{Frequenzgang}
+  \caption{Amplitudengang}
 \end{figure}
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e3, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e3, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
       %\addplot table[x=Freq, y=V(n002),col sep=comma, mark=none] {csv_files/Integrator_dB.csv};
       \addplot table[x=Freq, y=Phi,col sep=comma, mark=none] {csv_files/Integrator_Phi.csv};
     \end{axis}

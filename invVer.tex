@@ -10,7 +10,7 @@
 \end{figure}
 \noindent
 Da es sich bei dieser Schlatung um einen invertierenden Verst\"arker handelt, wird die Eingangsspannung an den invertierenden Eingang des OPV geschaltet.
-Der Ausgang wird ebenfalls auf den invertierenden Eingang gegengekoppelt, um eine brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung w\"urde die Differenzspannung zwischen invertierenden und nicht-invertierenden Eingang $\infty$ verst\"arken. Die Verst\"arkung wird mit den beiden Widerst\"anden $R_1$ 
+Der Ausgang wird ebenfalls auf den invertierenden Eingang gegengekoppelt, um eine brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung w\"urde die Differenzspannung zwischen invertierenden und nicht-invertierenden Eingang $\infty$ verst\"arken. Die Verst\"arkung wird mit den beiden Widerst\"anden $R_1$
 und $R_2$ eingestellt. Die beiden Spannungsquellen $V_2$ und $V_3$ stellen die symmetrische Versorgungsspannung von $-15V$ bis $+15V$ dar.\\ \\
 $\frac{U_e}{U_a}=-\frac{R_1}{R_2} \Rightarrow U_a=-U_e*\frac{R_2}{R_1} \Rightarrow V=-\frac{R_2}{R_1}$ \\ \\
 Da sich die Verst\"arkung $V$ laut Angabe zwischen $-40$ und $-60$ befinden soll wurden f\"ur die Widerst\"ande folgende Werte gew\"ahlt: \\ \\
@@ -74,7 +74,7 @@ erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung stark ve
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
     \end{axis}
   \end{tikzpicture}
@@ -83,7 +83,7 @@ erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung stark ve
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
     \end{axis}
   \end{tikzpicture}
@@ -96,7 +96,7 @@ f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
     \end{axis}
   \end{tikzpicture}
@@ -105,7 +105,7 @@ f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={$Hz$}, ylabel={dB},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
     \end{axis}
   \end{tikzpicture}
