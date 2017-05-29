@@ -45,6 +45,9 @@ $R_{13}=3,19k\Omega$ \\ \\
   \end{tikzpicture}
   \caption{Sinus, $V_{PP}=5V, f=50Hz$,}
 \end{figure}
+\noindent
+In dieser Abbildung ist die Eingangsspannung(blau), die Ausgangsspannung(rot) und die Schaltung am nicht-invertierenden Eingang(braun) des OPVs zu sehen. Mit den drei Widerst\"anden und der Referenzspannung von $5V$ werden die Schaltschwellen eingestellt. Die obigen Berechnungen werden in diesem Diagramm best\"atigt da man die Schaltschwellen von $0,963V$ bzw. $2,729V$ sehr gut erkennen kann. \\
+Erreicht der Sinus $2,729V$ auf der steigenden Flanke springt der Ausgnag auf $-U_v$ in diesem Fall Masse, und werden $0,963V$ auf der fallenden Flanke erreicht springt der Ausgang auf $+U_v$ in diesem Fall $5V$. Der Wert der positiven Versorgungsspannung wird nicht genau erreicht da es sich nicht um einen 'Rail-to-Rail' OPV handelt.
 
 \begin{figure}[H]
   \centering
@@ -57,3 +60,5 @@ $R_{13}=3,19k\Omega$ \\ \\
   \end{tikzpicture}
   \caption{Dreieck, $V_{PP}=5V, f=5MHz$}
 \end{figure}
+\noindent
+Auf Grund der hohen Frequenz ben\"otigt die Innenbeschaltung des OPVs einige Zeit bis sich das System einschwingt. Danach ist ein Schmitt-Triggerverhalten zu erkennen, jedoch wird aufgrund des Tiefpassverhaltens sehr stark ged\"ampft.
