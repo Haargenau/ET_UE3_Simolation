@@ -45,8 +45,8 @@ sein m\"ussen.
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=15cm, height=10cm, xmin=0, xmax=100e-3, xlabel={t}, ylabel={$U[V]$},y tick label style={grid=major}]
-      \addplot table[x=time, y=Ue, mark=none] {csv_files/invVer_time1.csv};
-      \addplot table[x=time, y=Ua, mark=none] {csv_files/invVer_time1.csv};
+      \addplot table[x=time, y=Ue, mark=none] {csv_files/invVer_time1_corr.csv};
+      \addplot table[x=time, y=Ua, mark=none] {csv_files/invVer_time1_corr.csv};
     \end{axis}
   \end{tikzpicture}
   \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=100Hz$}
@@ -59,15 +59,15 @@ von $V=-54,7$ verst\"arkt und am Ausgang des OPV ausgegeben.
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=15cm, height=10cm, xmin=0, xmax=1e-3, xlabel={t}, ylabel={$U[V]$},y tick label style={grid=major}]
-      \addplot table[x=time, y=Ue, mark=none] {csv_files/invVer_time2.csv};
-      \addplot table[x=time, y=Ua, mark=none] {csv_files/invVer_time2.csv};
+      \addplot table[x=time, y=Ue, mark=none] {csv_files/invVer_time2_corr.csv};
+      \addplot table[x=time, y=Ua, mark=none] {csv_files/invVer_time2_corr.csv};
     \end{axis}
   \end{tikzpicture}
   \caption{symmetrisches Dreieck, $V_{PP}=0.1V, f=10kHz$}
 \end{figure}
 \noindent
 Ein realer OPV verh\"alt sich intern \"ahnlich wie ein Tiefpassfilter, je h\"oher die Frequnez desto geringer wird die Verst\"arkung. Dies ist in dieser Simulation sehr gut zu
-erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung stark verschliffen und wird nicht mehr so gut verst\"arkt.
+erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung verschliffen und wird nicht mehr so gut verst\"arkt.
 
 
 \subsection{Bodediagramme}
@@ -114,4 +114,4 @@ f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ 
 \noindent
 Bei diesem Bodediagramm wurde die Verst\"arkung von $V=-54,7$ auf $V=-5,47$ verringert, dies erfolgte durch eine Veringerung von $R_1$ auf $8,2k\Omega$. Durch das
 \"Andern der Schaltungseigenschaften verschiebt sich die Grenzfrequenz des OPV nach hinten. Anstatt bereits bei $20kHz$ beginnt die D\"ampfung bei dieser Schaltung erst
-eine Dekade sp\"ater bei etwa $200kHz$. Daraus l\"asst sich folgern, dass die Verst\"arkung der OPV Schaltung mit der Grenzfrequenz direkt proportional zusammenh\"angt.
+eine Dekade sp\"ater bei etwa $200kHz$. 
