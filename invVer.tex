@@ -75,8 +75,8 @@ erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung verschli
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
-      \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
-      \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 39810,7.838) {};
+      \addplot table[x=Frequenz, y=dB, mark=none] {csv_files/invVer_bode1_corr.csv};
+      \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 19952,31.797) {};
     \end{axis}
   \end{tikzpicture}
   \caption{Amplitudengang, $V=-54,7$}
@@ -85,22 +85,21 @@ erkennen, das Ausgangssignal ist im Vergleich zu der vorherigen Messung verschli
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
-      \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode1.csv};
-      \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 39810,112) {};
+      \addplot table[x=Frequenz, y=Phi, mark=none] {csv_files/invVer_bode1_corr.csv};
+      \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 19952,133) {};
     \end{axis}
   \end{tikzpicture}
   \caption{Phasengang, $V=-54,7$}
 \end{figure}
 \noindent
-Das zuvor erw\"ahnt Tiefpassverhalten spiegelt sich in dem Bodediagramm wieder. Ab einer Grenzfrequenz von etwa $40kHz$ wird die Verst\"arkung dieser Schaltung weniger und
-f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ an.
+Das zuvor erw\"ahnt Tiefpassverhalten spiegelt sich in dem Bodediagramm wieder. Ab einer Grenzfrequenz von etwa $20kHz$ wird die Verst\"arkung dieser Schaltung weniger und f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ an. Bis zur Grenzfrequenz des beschalteten OPVs, wird mit $34dB$ verst\"arkt, dies entstpricht dem zuvor berechneten Faktor von $54$. Die Transitfrequnez befindet sich bei ca. $1Mhz$, ab dieser beginnt der OPV zu d\"ampfen.
 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
-      \addplot table[x=Frequenz, y=dB,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
-      \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 199526,-8.194) {};
+      \addplot table[x=Frequenz, y=dB, mark=none] {csv_files/invVer_bode2_corr.csv};
+      \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 199526,11.805) {};
     \end{axis}
   \end{tikzpicture}
   \caption{Amplitudengang, , $V=-5,47$}
@@ -109,7 +108,7 @@ f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ 
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=15cm, height=7cm, xmin=1, xmax=100e5, , xmode=log, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
-      \addplot table[x=Frequenz, y=Phase,col sep=comma, mark=none] {csv_files/invVer_bode2.csv};
+      \addplot table[x=Frequenz, y=Phi, mark=none] {csv_files/invVer_bode2_corr.csv};
       \node[label={340:{$f_g$}},rectangle,fill=blue,inner sep=3pt] at (axis cs: 199526,116) {};
     \end{axis}
   \end{tikzpicture}
@@ -117,5 +116,4 @@ f\"allt zun\"achst mit $-20dB/Dek$, dies steigt letztlich sogar auf $-40dB/Dek$ 
 \end{figure}
 \noindent
 Bei diesem Bodediagramm wurde die Verst\"arkung von $V=-54,7$ auf $V=-5,47$ verringert, dies erfolgte durch eine Veringerung von $R_1$ auf $8,2k\Omega$. Durch das
-\"Andern der Schaltungseigenschaften verschiebt sich die Grenzfrequenz des OPV nach hinten. Anstatt bereits bei $40kHz$ beginnt die D\"ampfung bei dieser Schaltung erst ungef\"ahr
-eine Dekade sp\"ater bei etwa $200kHz$.
+\"Andern der Schaltungseigenschaften verschiebt sich die Grenzfrequenz des OPV nach hinten. Anstatt bereits bei $20kHz$ beginnt die D\"ampfung bei dieser Schaltung erst ungef\"ahr eine Dekade sp\"ater bei etwa $200kHz$. Die Transitfrequenz bleibt unver\"adert bei ca. $1Mhz$. 
